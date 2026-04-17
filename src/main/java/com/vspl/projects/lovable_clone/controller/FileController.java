@@ -1,5 +1,6 @@
 package com.vspl.projects.lovable_clone.controller;
 
+import com.vspl.projects.lovable_clone.dto.project.FileContentResponse;
 import com.vspl.projects.lovable_clone.dto.project.FileTreeResponse;
 import com.vspl.projects.lovable_clone.service.FileService;
 import lombok.RequiredArgsConstructor;
@@ -21,4 +22,11 @@ public class FileController {
         Long userId = 1L;
         return ResponseEntity.ok(fileService.getFileTree(projectId, userId));
     }
+
+    @GetMapping("/{*path}")
+    public ResponseEntity<FileContentResponse> getFile(@PathVariable Long projectId, @PathVariable String path){
+        Long userId = 1L;
+        return ResponseEntity.ok(fileService.getFileContent(projectId, path, userId));
+    }
+
 }
