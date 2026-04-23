@@ -1,5 +1,7 @@
 package com.vspl.projects.lovable_clone.entity;
 
+import com.vspl.projects.lovable_clone.enums.ProjectRole;
+
 import java.time.Instant;
 
 public class ProjectMember {
